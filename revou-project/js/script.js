@@ -31,9 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Please fill in all fields.');
         }
 
-        // Set the username in the welcome message
-        const displayName = document.getElementById('display-name');
-        displayName.textContent = name;
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const displayName = document.getElementById('display-name');
+        
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent form from submitting
+                const nameInput = document.getElementById('name').value;
+                displayName.textContent = nameInput;
     });
 
     // Set the username in the welcome message
